@@ -21,7 +21,7 @@ pub fn three_spheres() -> World {
     let material_left = Rc::new(Metal::new(rgb(127, 50, 0), 0.05));
     let material_right = Rc::new(Metal::new(rgb(50, 127, 50), 0.01));
 
-    let three_spheres = World::new(vec![
+    World::new(vec![
         Rc::new(ground_sphere()),
         Rc::new(Sphere::new(
             Vec3::new(-0.5, 0.0, -1.0),
@@ -30,20 +30,18 @@ pub fn three_spheres() -> World {
         )),
         Rc::new(Sphere::new(Vec3::new(-1.6, -0.1, -0.8), 0.4, material_left)),
         Rc::new(Sphere::new(Vec3::new(0.7, 0.0, -0.5), 0.5, material_right)),
-    ]);
-
-    three_spheres
+    ])
 }
 
 pub fn rainbow_spheres() -> World {
     const RADIUS: f32 = 0.15;
 
-    let material_red = Rc::new(Metal::new(rgb(255, 0, 0), 0.1)) as _;
-    let material_orange = Rc::new(Metal::new(rgb(255, 127, 0), 0.1)) as _;
-    let material_yellow = Rc::new(Metal::new(rgb(255, 255, 0), 0.1)) as _;
-    let material_green = Rc::new(Metal::new(rgb(0, 255, 0), 0.1)) as _;
-    let material_blue = Rc::new(Metal::new(rgb(0, 0, 255), 0.1)) as _;
-    let material_indigo = Rc::new(Metal::new(rgb(75, 0, 130), 0.1)) as _;
+    let material_red = Rc::new(Metal::new(rgb(255, 0, 0), 0.1));
+    let material_orange = Rc::new(Metal::new(rgb(255, 127, 0), 0.1));
+    let material_yellow = Rc::new(Metal::new(rgb(255, 255, 0), 0.1));
+    let material_green = Rc::new(Metal::new(rgb(0, 255, 0), 0.1));
+    let material_blue = Rc::new(Metal::new(rgb(0, 0, 255), 0.1));
+    let material_indigo = Rc::new(Metal::new(rgb(75, 0, 130), 0.1));
 
     World::new(vec![
         Rc::new(ground_sphere()),

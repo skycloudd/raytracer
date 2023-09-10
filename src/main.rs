@@ -17,7 +17,7 @@ const VERTICAL_FOV: f32 = 60.0;
 const LOOK_FROM: Vec3 = Vec3::new(0.0, 0.0, 2.0);
 const LOOK_AT: Vec3 = Vec3::new(0.0, 0.0, 0.0);
 
-const SAMPLES_PER_PIXEL_CONFIG: u32 = 6;
+const SAMPLES_PER_PIXEL_CONFIG: u32 = 3;
 const SAMPLES_PER_PIXEL: u32 = SAMPLES_PER_PIXEL_CONFIG * SAMPLES_PER_PIXEL_CONFIG;
 const MAX_DEPTH: u16 = 50;
 
