@@ -1,8 +1,7 @@
-use std::rc::Rc;
-
 use crate::hit::{HitRecord, Hittable};
 use crate::interval::{Interval, Range};
 use crate::ray::Ray;
+use std::rc::Rc;
 
 pub struct World {
     objects: Vec<Rc<dyn Hittable>>,

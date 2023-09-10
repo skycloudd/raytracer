@@ -1,16 +1,14 @@
-use std::rc::Rc;
-
 use crate::interval::Range;
 use crate::materials::Material;
 use crate::ray::Ray;
 use glam::Vec3;
+use std::rc::Rc;
 
 pub struct HitRecord {
     point: Vec3,
     normal: Vec3,
     material: Rc<dyn Material>,
     t: f32,
-    // front_face: bool,
 }
 
 impl HitRecord {
@@ -21,11 +19,13 @@ impl HitRecord {
         ray: &Ray,
         material: Rc<dyn Material>,
     ) -> HitRecord {
-        let front_face = ray.direction().dot(normal) < 0.0;
-
         HitRecord {
             point,
-            normal: if front_face { normal } else { -normal },
+            normal: if ray.direction().dot(normal) < 0.0 {
+                normal
+            } else {
+                -normal
+            },
             material,
             t,
         }

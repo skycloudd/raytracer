@@ -1,10 +1,9 @@
-use std::rc::Rc;
-
 use crate::hit::{HitRecord, Hittable};
 use crate::interval::Range;
 use crate::materials::Material;
 use crate::ray::Ray;
 use glam::Vec3;
+use std::rc::Rc;
 
 pub struct Sphere {
     center: Vec3,
